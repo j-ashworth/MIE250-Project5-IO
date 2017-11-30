@@ -20,22 +20,17 @@ public class IndexingTokenizer implements Tokenizer {
     
     public ArrayList<String> tokenize(String s){
         
-        ArrayList<String> ret = new ArrayList<String>();
-        Pattern p = Pattern.compile("(\\w-*)+");
+        ArrayList<String> ret = new ArrayList<String>(); 
+        Pattern p = Pattern.compile("(\\w-*)+"); //regex conditions given in project doc
         Matcher m = p.matcher(s);
         while(m.find()){
-            ret.add(m.group().toLowerCase());
+            ret.add(m.group().toLowerCase()); //add each token to arratlist 
         }
         return ret;
     }
     
-    public TreeSet<String> treeToken(ArrayList<String> arr){
-        TreeSet<String> a = new TreeSet<String>(arr);
-        return a;
-    }
-    
     //testing!!
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args){
         IndexingTokenizer i = new IndexingTokenizer();
         String s = "SoftBank is buying a chunk of Uber and it's state-of-the-art Taxi-hailing system for $10 billion the the the";
         //System.out.println(i.tokenize(s));

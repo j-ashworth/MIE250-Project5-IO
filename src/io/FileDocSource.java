@@ -26,19 +26,19 @@ public class FileDocSource extends DocSource {
     public String getDoc(int id) {
         StringBuilder sb = new StringBuilder();
         try{
-            BufferedReader fin = new BufferedReader(new FileReader(_files.get(id)));
+            BufferedReader fin = new BufferedReader(new FileReader(_files.get(id))); //read in files
             String content;
-            while ((content = fin.readLine()) != null) {
-                sb.append(content);
+            while ((content = fin.readLine()) != null){ //read each line until end of file 
+                sb.append(content); //append the content to one string 
             }
             fin.close();
-        }catch (Exception e){
+        }catch (Exception e){ 
             System.out.println("error reading file");
         }
         return sb.toString();
     }  
     
-    public static void main(String[] args){
+    public static void main(String[] args){ //testing 
         FileDocSource test = new FileDocSource("/Users/JulianAshworth/Desktop/Part1/awards_1990/awd_1990_00");
         System.out.print(test.getDoc(0));
     }

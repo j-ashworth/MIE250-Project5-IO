@@ -9,7 +9,8 @@ import java.util.TreeSet;
 
 /**
  *
- * @author JulianAshworth
+ * @author JulianAshworth 
+ *
  */
 public class SortedDocScore extends DocScore implements Comparable{
     
@@ -21,22 +22,22 @@ public class SortedDocScore extends DocScore implements Comparable{
     }
     
     public int compareTo(Object o){
-        if(!(o instanceof DocScore))
+        if(!(o instanceof DocScore)) //if not the same object return 
             return 1;
         
         DocScore ds = (DocScore)o;
         
-        if(this._score > (ds._score)) //this comes before
+        if(this._score > (ds._score)) //this comes before object
             return -1;
-        if(this._score < (ds._score)) //this comes after 
+        if(this._score < (ds._score)) //this comes after object
             return 1; 
         if(!this._content.equals(ds._content)){ //strings are different 
-            return this._content.compareTo(ds._content);
+            return this._content.compareTo(ds._content); //return the compare to of strings
         }
-        return 0; //objects are equal 
+        return 0; //objects are equal, passed all other tests 
     }    
     
-    public static void main(String[] args){
+    public static void main(String[] args){ //testing
         SortedDocScore a = new SortedDocScore(1, 2, "z");
         SortedDocScore b = new SortedDocScore(1, 3, "hello");
         SortedDocScore c = new SortedDocScore(1.1, 3, "hello");

@@ -18,11 +18,10 @@ public class TFIDFScoringFun implements TermScoringFun{
     public void init(Index s){
         numDocs = s.getDocSource().getNumDocs();
         index = s;
-   
     }
     public double scoreToken(String term, int freq){
         double score = 0;
-        try {
+        try { //run formula for the scoring
             score = Math.log10(1.0 + (double)freq)*Math.log10((double)numDocs/(double)index.getDocumentFreq(term));
         } catch (Exception ex){
             System.out.println("bad log");
