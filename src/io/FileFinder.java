@@ -23,8 +23,6 @@ public class FileFinder {
 				ret_files.add(f);
 			}
 		}
-		
 		return ret_files;
 	}
-
 }

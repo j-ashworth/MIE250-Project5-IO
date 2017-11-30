@@ -1,5 +1,5 @@
 package io;
-
+import java.io.*;
 /** This class provides an abstract interface to any source of documents.
  *  See StaticDocSource for a simple instantiation.
  * 
@@ -8,5 +8,5 @@ package io;
  */
 public abstract class DocSource {
 	public abstract int getNumDocs();
-	public abstract String getDoc(int id);
+	public abstract String getDoc (int id);
 }
