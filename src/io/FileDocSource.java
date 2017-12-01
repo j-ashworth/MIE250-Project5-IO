@@ -32,8 +32,11 @@ public class FileDocSource extends DocSource {
                 sb.append(content); //append the content to one string 
             }
             fin.close();
-        }catch (Exception e){ 
-            System.out.println("error reading file");
+        }catch (FileNotFoundException e){ 
+            System.out.println("file not found");
+        }
+        catch(IOException e){
+            System.out.println("Couldnt access file");
         }
         return sb.toString();
     }  

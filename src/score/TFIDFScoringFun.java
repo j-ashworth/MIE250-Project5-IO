@@ -23,7 +23,7 @@ public class TFIDFScoringFun implements TermScoringFun{
         double score = 0;
         try { //run formula for the scoring
             score = Math.log10(1.0 + (double)freq)*Math.log10((double)numDocs/(double)index.getDocumentFreq(term));
-        } catch (Exception ex){
+        } catch (ArithmeticException ex){
             System.out.println("bad log");
         }
         return score;
